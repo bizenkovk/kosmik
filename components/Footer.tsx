@@ -75,7 +75,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-[#C6A15B]/14">
-        <div className="mx-auto flex max-w-7xl flex-col items-start gap-2 px-4 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#C8B8A8] sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-start gap-2 px-4 py-4 text-[0.9rem] font-semibold text-[#C8B8A8] sm:flex-row sm:items-center sm:gap-4 sm:px-6 lg:px-8">
           <span>{footerContent.supportCredit.label}</span>
           <img
             src={footerContent.supportCredit.logoSrc}
