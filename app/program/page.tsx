@@ -5,15 +5,14 @@ import { conference } from "@/data/conference";
 import { program } from "@/data/program";
 import { formatRussianDate } from "@/lib/format";
 import { hasPublicFile } from "@/lib/fileAvailability";
+import { createPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Программа конференции",
   description:
     "Программа конференции КоСМиК.ру-2026: дата, структура заседаний, форматы и материалы для скачивания.",
-  alternates: {
-    canonical: `${conference.canonicalUrl}/program`
-  }
-};
+  path: "/program"
+});
 
 export default function ProgramPage() {
   const programFileAvailable = hasPublicFile(program.downloadUrl);

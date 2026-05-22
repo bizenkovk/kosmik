@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { conference, resultsContent } from "@/data/conference";
+import { createPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Итоги конференции",
   description:
     "Итоги конференции КоСМиК.ру-2026: материалы, секции, фотографии, ссылки на сборник и монографию после публикации.",
-  alternates: {
-    canonical: `${conference.canonicalUrl}/results`
-  }
-};
+  path: "/results",
+  noIndex: conference.resultsStatus !== "published"
+});
 
 export default function ResultsPage() {
   const status = conference.resultsStatus;

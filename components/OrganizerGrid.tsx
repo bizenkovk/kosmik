@@ -5,7 +5,7 @@ export function OrganizerGrid() {
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
       {organizers.map((organizer) => {
-        const logoSrc = findPublicAsset(`/logos/${organizer.logoBase}`, ["svg", "png"]);
+        const logoSrc = findPublicAsset(`/logos/${organizer.logoBase}`, ["webp", "svg", "png"]);
 
         return (
           <article

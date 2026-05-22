@@ -4,7 +4,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Footer } from "@/components/Footer";
 import { SiteHeader } from "@/components/SiteHeader";
 import { YandexMetrika } from "@/components/YandexMetrika";
-import { conference } from "@/data/conference";
+import { conference, organizers } from "@/data/conference";
 
 export const metadata: Metadata = {
   metadataBase: new URL(conference.canonicalUrl),
@@ -67,10 +67,54 @@ export const viewport: Viewport = {
   themeColor: "#F3EBDD"
 };
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: conference.shortTitle,
+    url: conference.canonicalUrl,
+    inLanguage: "ru-RU"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Международная академия естествознания",
+    alternateName: "МАЕ",
+    url: conference.canonicalUrl,
+    email: conference.supportEmail
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: conference.shortTitle,
+    alternateName: conference.fullTitle,
+    description: conference.description,
+    startDate: conference.eventDate,
+    endDate: conference.eventDate,
+    eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode",
+    eventStatus: "https://schema.org/EventScheduled",
+    inLanguage: "ru-RU",
+    url: conference.canonicalUrl,
+    image: `${conference.canonicalUrl}/og-image-2026-v3.jpg`,
+    location: {
+      "@type": "VirtualLocation",
+      url: `${conference.canonicalUrl}/program`
+    },
+    organizer: organizers.map((organizer) => ({
+      "@type": "Organization",
+      name: organizer.fullName
+    }))
+  }
+];
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang={conference.language}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <YandexMetrika />
         <SiteHeader />
         {children}

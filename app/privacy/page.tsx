@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { conference } from "@/data/conference";
+import { createPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Политика обработки персональных данных",
   description:
     "Политика обработки персональных данных сайта конференции КоСМиК.ру-2026.",
-  alternates: {
-    canonical: `${conference.canonicalUrl}/privacy`
-  }
-};
+  path: "/privacy"
+});
 
 type PolicySection = {
   id?: string;

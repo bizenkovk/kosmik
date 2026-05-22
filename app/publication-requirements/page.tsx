@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { GoalLink } from "@/components/GoalLink";
 import { SectionHeading } from "@/components/SectionHeading";
-import { conference } from "@/data/conference";
 import {
   authorDocuments,
   publicationContacts,
@@ -9,15 +8,14 @@ import {
   publicationRequirementSections,
   type RequirementSection
 } from "@/data/publicationRequirements";
+import { createPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = {
-  title: "Требования к публикации материалов",
+export const metadata: Metadata = createPageMetadata({
+  title: "Публикация материалов и документы для авторов",
   description:
-    "Требования к публикации материалов конференции КоСМиК.ру-2026: структура статьи, сроки, оформление и файлы для скачивания.",
-  alternates: {
-    canonical: `${conference.canonicalUrl}/publication-requirements`
-  }
-};
+    "Публикация материалов конференции КоСМиК.ру-2026: порядок подачи, требования к оформлению и документы для авторов.",
+  path: "/publication-requirements"
+});
 
 function RequirementDetails({ section, open = false }: { section: RequirementSection; open?: boolean }) {
   return (

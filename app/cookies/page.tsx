@@ -1,17 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { conference } from "@/data/conference";
+import { createPageMetadata } from "@/lib/seoMetadata";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Политика использования cookie-файлов — КоСМиК.ру-2026"
-  },
+export const metadata: Metadata = createPageMetadata({
+  title: "Политика использования cookie-файлов — КоСМиК.ру-2026",
   description:
     "Информация об использовании cookie-файлов, localStorage и Яндекс.Метрики на сайте конференции КоСМиК.ру-2026.",
-  alternates: {
-    canonical: `${conference.canonicalUrl}/cookies`
-  }
-};
+  path: "/cookies",
+  absoluteTitle: true
+});
 
 type CookieTableRow = {
   category: string;
