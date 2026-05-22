@@ -306,6 +306,11 @@ export const footerContent = {
     label: "Cookie-файлы",
     href: "/cookies"
   },
+  supportCredit: {
+    label: "Разработано и поддерживается",
+    logoSrc: "/logos/akadarium-footer.png",
+    logoAlt: "Акадариум"
+  },
   groups: [
     {
       title: "Разделы сайта",
