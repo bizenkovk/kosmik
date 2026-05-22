@@ -307,7 +307,7 @@ export const footerContent = {
     href: "/cookies"
   },
   supportCredit: {
-    label: "Разработано и поддерживается",
+    label: "Создано и поддерживается",
     logoSrc: "/logos/akadarium-footer.png",
     logoAlt: "Акадариум"
   },
