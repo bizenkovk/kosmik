@@ -39,10 +39,21 @@ export function SiteHeader() {
       <div className="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="serif text-lg font-semibold tracking-[0] text-[#1F1A17] transition hover:text-[#9F1D2D]"
+          className="group flex min-w-0 items-center gap-3 text-[#1F1A17] transition hover:text-[#9F1D2D]"
           aria-label="На главную страницу КоСМиК.ру-2026"
         >
-          {conference.shortTitle}
+          <span className="flex h-11 w-[4.9rem] shrink-0 items-center justify-center rounded-md border border-[#D8C6AF] bg-[#F3EBDD] px-2 shadow-[0_8px_24px_rgba(90,70,55,0.08)] transition group-hover:border-[#C6A15B]/70">
+            <img
+              src={conference.logoSrc}
+              alt={conference.logoAlt}
+              width={720}
+              height={417}
+              className="h-8 w-auto object-contain"
+            />
+          </span>
+          <span className="serif truncate text-lg font-semibold tracking-[0]">
+            {conference.shortTitle}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-5 xl:flex" aria-label="Основная навигация">

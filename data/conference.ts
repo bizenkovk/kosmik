@@ -30,6 +30,8 @@ export const conference = {
   domain: "kosmik.ians.academy",
   canonicalUrl: "https://kosmik.ians.academy",
   shortTitle: "КоСМиК.ру-2026",
+  logoSrc: "/logos/kosmik-logo.webp",
+  logoAlt: "Логотип КоСМиК.ру-2026",
   fullTitle:
     "КоСМиК.ру-2026: Корпус Современных Моделей и Кодов русского языка",
   description:

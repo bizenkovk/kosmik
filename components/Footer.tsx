@@ -8,13 +8,28 @@ export function Footer() {
     <footer className="border-t border-[#C6A15B]/25 bg-[#46302B] text-[#E8D8C8]">
       <div className="mx-auto grid max-w-7xl items-start gap-7 px-4 py-8 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.22fr_0.95fr_0.95fr_1.08fr] lg:px-8">
         <div>
-          <p className="serif text-2xl font-semibold text-[#F7EFE6]">{conference.shortTitle}</p>
-          <p className="mt-2 max-w-sm text-[0.95rem] leading-6 text-[#C8B8A8]">
-            {footerContent.subtitle}
-          </p>
-          <p className="mt-3 text-[0.95rem] font-semibold text-[#C6A15B]">
-            {footerContent.date}
-          </p>
+          <div className="flex items-start gap-4">
+            <div className="flex h-16 w-24 shrink-0 items-center justify-center rounded-md border border-[#C6A15B]/25 bg-[#F3EBDD]/95 px-3 shadow-[0_14px_38px_rgba(36,27,26,0.18)]">
+              <img
+                src={conference.logoSrc}
+                alt={conference.logoAlt}
+                width={720}
+                height={417}
+                className="h-11 w-auto object-contain"
+              />
+            </div>
+            <div className="min-w-0">
+              <p className="serif text-2xl font-semibold text-[#F7EFE6]">
+                {conference.shortTitle}
+              </p>
+              <p className="mt-2 max-w-sm text-[0.95rem] leading-6 text-[#C8B8A8]">
+                {footerContent.subtitle}
+              </p>
+              <p className="mt-3 text-[0.95rem] font-semibold text-[#C6A15B]">
+                {footerContent.date}
+              </p>
+            </div>
+          </div>
         </div>
 
         {footerContent.groups.map((group) => (
